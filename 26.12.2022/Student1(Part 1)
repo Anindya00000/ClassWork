@@ -1,3 +1,7 @@
+//assigning value using instance of a class 
+// and
+//assigning value using method
+
 package oops;
 class Student1
 {
