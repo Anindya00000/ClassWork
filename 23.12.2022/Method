@@ -1,0 +1,23 @@
+package basic;
+
+public class Method 
+{
+   	public static int add(int a,int b)
+	  {
+		
+		   //System.out.println((a+b));
+		   return a+b;
+	  } 
+    public static int sub(int a,int b)//defination
+    {
+	     //System.out.println(a-b);
+	     return a-b;
+    }
+	  public static void main(String[] args) 
+    {
+		    int addition=Method.add(5,7);             //method calling or method invoke
+		    int subtraction=Method.sub(8,3);         //method calling or invoke
+	      System.out.println("Addition: "+addition);
+	      System.out.println("Subtraction: "+subtraction);
+ 	  }
+}
