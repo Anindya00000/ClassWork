@@ -1,0 +1,108 @@
+package oops;
+class Employee1
+{
+	int id;
+	String name,city,state,designation,country;
+	long phno,salary;
+	public Employee1(int id,String name,String city)
+	{
+		this.id=id;
+		this.name=name;
+		this.city=city;
+	}
+	public Employee1(int id, String name,String city,String country,String state)
+	{
+		this(id,name,city);
+		this.country=country;
+		this.state=state;
+	}
+	public Employee1(int id, String name,String city,String country,String state,long phno,long salary,String designation)
+	{
+		this(id,name,city,country,state);
+		this.phno=phno;
+		this.salary=salary;
+		this.designation=designation;
+}
+//	@Override
+//	public String toString() {
+//		StringBuilder builder = new StringBuilder();
+//		builder.append("Employee1 [id=");
+//		builder.append(id);
+//		builder.append(", name=");
+//		builder.append(name);
+//		builder.append(", city=");
+//		builder.append(city);
+//		builder.append(", state=");
+//		builder.append(state);
+//		builder.append(", designation=");
+//		builder.append(designation);
+//		builder.append(", country=");
+//		builder.append(country);
+//		builder.append(", phno=");
+//		builder.append(phno);
+//		builder.append(", salary=");
+//		builder.append(salary);
+//		builder.append("]");
+//		return builder.toString();
+//	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getDesignation() {
+		return designation;
+	}
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	public long getPhno() {
+		return phno;
+	}
+	public void setPhno(long phno) {
+		this.phno = phno;
+	}
+	public long getSalary() {
+		return salary;
+	}
+	public void setSalary(long salary) {
+		this.salary = salary;
+	}
+	
+	}
+public class ConstructorChaining {
+
+	public static void main(String[] args) {
+		Employee1 emp1=new Employee1(101, "Suvojit", "kolkata");
+		System.out.println(emp1.getId()+" "+emp1.getName()+" "+emp1.getCity());
+		Employee1 emp2=new Employee1(101, "Arpan","Sreerampore", "India", "WB");
+		System.out.println(emp2.getId()+" "+emp2.getName()+" "+emp2.getCity()+" "+emp2.getCountry()+" "+emp2.getState());
+		
+	}
+
+}
