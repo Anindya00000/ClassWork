@@ -1,0 +1,31 @@
+package oops;
+class Employee
+{
+	//instance variable
+	int id;
+	String name;
+	String address;
+	long phno;
+	
+ Employee(int id,String name,String address,long phno) {
+		this.id=id;
+		this.name=name;
+		this.address=address;
+		this.phno=phno;
+	}
+ public void display()
+ {
+	 System.out.println("id: "+id);
+	 System.out.println("Name: "+name);
+	 System.out.println("Address: "+address);
+	 System.out.println("Phno: "+phno);
+ }
+	}
+public class ThisKeywordDemo {
+
+	public static void main(String[] args) {
+		Employee emp1=new Employee(101, "Nilanjan", "Kolkata", 7003872448l);
+		emp1.display();
+	}
+
+}
