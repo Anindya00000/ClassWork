@@ -1,0 +1,49 @@
+package oops;
+interface Printable
+{
+	int x=100;
+	void display();//abstract by default
+	void fun();
+	}
+class Print implements Printable
+{
+
+	@Override
+	public void display() {
+		System.out.println("This is display");
+	}
+
+	@Override
+	public void fun() {
+		System.out.println("java is fun");
+		
+	}
+	
+	}
+class Message implements Printable
+{
+
+	@Override
+	public void display() {
+		System.out.println("Hello World");
+	}
+
+	@Override
+	public void fun() {
+		System.out.println("fun learning");
+		
+	}
+	}
+public class InterfaceDemo 
+{
+
+	public static void main(String[] args) {
+		Printable p;
+		p=new Print();
+		p.display();
+		p.fun();
+		p=new Message();
+		p.display();
+		p.fun();
+
+	}
