@@ -1,0 +1,49 @@
+package Demo;
+
+public class Address 
+{
+	int pincode;
+	String city,country,state;
+	public Address(int pincode, String city, String country, String state) 
+	{
+		super();
+		this.pincode = pincode;
+		this.city = city;
+		this.country = country;
+		this.state = state;
+	}
+	public int getPincode()  //getter method
+	{
+		return pincode;
+	}
+	public void setPincode(int pincode)  //setter method
+	{
+		this.pincode = pincode;
+	}
+	public String getCity()  //getter method
+	{
+		return city;
+	}
+	public void setCity(String city)  //setter method
+	{
+		this.city = city;
+	}
+	public String getCountry() //getter method
+	{
+		return country;
+	}
+	public void setCountry(String country) //setter method
+	{
+		this.country = country;
+	}
+	public String getState() //getter method
+	{
+		return state;
+	}
+	public void setState(String state) //setter method
+	{
+		this.state = state;
+	}
+
+}
+
