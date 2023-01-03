@@ -23,7 +23,7 @@ class TCS
 		this.comName = comName;
 		this.address = address;
 	}
-	
+	 
 	}
        public class AggregationDemo  //Main class where 'main method' exists 
        {
@@ -46,4 +46,5 @@ class TCS
 	        + "\ncity: "+com2.getAddress().getCity()+"Country: "+com2.getAddress().getCountry()+"\nState: "+com2.getAddress().getState());
 	      }
 
+       }
 }
