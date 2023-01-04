@@ -1,0 +1,57 @@
+package bookmanagement;
+
+import java.util.Scanner;
+
+public class BookService {
+	static Book book[]=new Book[10];
+	static Scanner sc =new Scanner(System.in);
+	static int index=0;
+	//createBook method
+	public void createBook()
+	{
+		int id;
+		String bname;
+		double price;
+		System.out.println("Enter the book id: ");
+		id=sc.nextInt();
+		sc.nextLine();
+		System.out.println("Enter book name: ");
+		bname=sc.nextLine();
+		System.out.println("Enter the book price: ");
+		price=sc.nextDouble();
+		book[index]=new Book(id,bname,price);
+		index++;
+		System.out.println("New Book add successfully");
+	}
+	//get all book details
+			public static void getAllBook()
+			{
+				for(int i=0;i<index;i++)
+				{
+					System.out.println("book id: "+book[i].getBookId());
+					System.out.println("Book Name: "+book[i].getBookName());
+					System.out.println("Book Price: "+book[i].getBookPrice());
+				}
+				
+			}
+			//get book by id
+			public static void SearchById()
+			{
+				System.out.println("enter the book id: ");
+				int bid=sc.nextInt();
+				int i;
+				for(i=0;i<index;i++) {
+					if(book[i].getBookId()==bid)
+					{
+						System.out.println("bookId: "+book[i].getBookId());
+						System.out.println("book Name: "+book[i].getBookName());
+						System.out.println("book price: "+book[i].getBookPrice());
+					break;
+					}
+				}
+				if(i==index)
+					System.out.println("book not found");
+				
+			}
+
+}
