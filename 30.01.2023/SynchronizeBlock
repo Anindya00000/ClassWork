@@ -1,0 +1,51 @@
+package multithreading;
+class PrintTable
+{
+	static synchronized void multiplication(int n)
+	{
+		System.out.println("out of synchronize block");
+		synchronized(PrintTable.class)
+		{
+			for(int i=1;i<=5;i++)
+			{
+				System.out.println(n*i);
+			}
+			try {
+				Thread.sleep(400);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		System.out.println("Rest of code is not synchronized");
+	}
+	}
+public class SynchronizeBlock {
+
+	public static void main(String[] args) {
+		//PrintTable pt=new PrintTable();
+		Thread t1=new Thread()
+				{
+			public void run()
+			{
+				//pt.multiplication(4);
+				PrintTable.multiplication(4);
+			}
+				};
+				
+				Thread t2=new Thread()
+				{
+			public void run()
+			{
+				//pt.multiplication(6);
+				PrintTable.multiplication(6);
+			}
+				};
+				
+			t1.start();
+			t2.start();
+
+	}
+
+}
+
