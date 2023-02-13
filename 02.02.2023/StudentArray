@@ -1,0 +1,29 @@
+package collection;
+
+import java.util.ArrayList;
+
+public class StudentArray {
+
+	public static void main(String[] args) {
+	ArrayList<Student> students=new ArrayList<>();
+//	Student s1=new Student(101, "Arpita", "Kolkata");
+//	Student s2=new Student(102,"Sangita", "Mumbai");
+//	Student s3=new Student(103, "Suvojit", "Bangalore");
+//	students.add(s1);
+//	students.add(s2);
+//	students.add(s3);
+	//Using Anonymus object
+	students.add(new Student(101, "Arpita", "Kolkata"));
+	students.add(new Student(102,"Sangita", "Mumbai"));
+	students.add(new Student(103, "Suvojit", "Bangalore"));
+	for(Student std:students)
+	{
+		System.out.println("id: "+std.getId());
+		System.out.println("Name: "+std.getName());
+		System.out.println("City: "+std.getCity());
+		System.out.println("===========================");
+	}
+
+	}
+
+}
