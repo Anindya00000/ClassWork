@@ -1,0 +1,46 @@
+package com.ems;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+
+import com.ems.service.EmployeeService;
+@TestMethodOrder(value=org.junit.jupiter.api.MethodOrderer.OrderAnnotation.class)
+class EmployeeServiceTest {
+	EmployeeService empService;
+	@BeforeEach
+	void setup()
+	{
+		empService=new EmployeeService();
+	}
+	@AfterEach
+	void cleanup() 
+	{
+		empService=null;
+		System.out.println("object is garbaje collcted");
+	}
+	@Test
+	@DisplayName("Test for add Employee Method")
+	@Order(1)
+	public void addEmployeeTest()
+	{
+		empService.addEmployee(101, "Anindya", 40000, "Kolkata", "India");
+		empService.addEmployee(102, "Rajat", 50000, "New york", "USA");
+		assertEquals(2,empService.lengthOfList());
+	}
+	@Test
+	@DisplayName("Test for Display All Employee")
+	@Order(value=2)
+	public void testDisplayAll()
+	{
+		empService.addEmployee(101, "Anindya", 40000, "Kolkata", "India");
+		assertThat(empService.displayAll()).isNotNull();
+		
+	}
+}
