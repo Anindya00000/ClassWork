@@ -1,0 +1,39 @@
+abstract class Bank3
+{
+	abstract void loan();//abstract method
+	//concrete method has body
+	public void display()
+	{
+		System.out.println("this is a blank class");
+	}
+	}
+class Axis3 extends Bank3
+{
+
+	@Override
+	void loan() {
+		System.out.println("we provide 10% interest");
+	}
+	
+	}
+class Sbi3 extends Bank3
+{
+
+	@Override
+	void loan() {
+		System.out.println("we provide 16% interest");
+	}
+	}
+
+public class AbstractDemo {
+
+	public static void main(String[] args) {
+		
+		Bank3 bk;
+		bk=new Axis3();
+		bk.loan();
+		bk=new Sbi3();
+		bk.loan();
+	}
+
+}
