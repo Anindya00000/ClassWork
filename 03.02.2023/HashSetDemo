@@ -1,0 +1,33 @@
+package collection;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class HashSetDemo {
+
+	public static void main(String[] args) {
+		HashSet<String> hset=new HashSet<>();
+		hset.add("apple");
+		hset.add("orange");
+		hset.add("kiwi");
+		hset.add("banana");
+		hset.add("orange");
+		//hset.add(null);
+		System.out.println(hset);
+		hset.add("water melon");
+		Iterator itr=hset.iterator();
+		while(itr.hasNext())
+		{
+			System.out.println(itr.next());
+		}
+		
+		hset.removeIf(str->str.contains("an"));
+		Iterator itr1=hset.iterator();
+		System.out.println("====================");
+		while(itr1.hasNext())
+		{
+			System.out.println(itr1.next());
+		}
+	}
+
+}
