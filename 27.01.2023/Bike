@@ -1,0 +1,22 @@
+final class Bike
+{
+	final void speed()
+	{
+		System.out.println("150kmh");
+	}
+	
+	}
+public class FinalDemo extends Bike {// final class can not be  extends
+//	void speed()//final method can not be overridden
+//	{
+//		System.out.println("200kmh");
+//	}
+	final int a=100;
+	public static void main(String[] args) {
+	
+		FinalDemo demo=new FinalDemo();
+		//demo.a=40;//can not assign value to final variable
+
+	}
+
+}
