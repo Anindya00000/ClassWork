@@ -1,0 +1,51 @@
+package collection;
+
+import java.util.HashSet;
+
+class Book
+{
+	int id;
+	String name,author;
+	int quantity;
+	public Book(int id, String name, String author, int quantity) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.author = author;
+		this.quantity = quantity;
+	}
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	
+	}
+public class HashMapExample {
+
+	public static void main(String[] args) {
+		HashSet<Book> set=new HashSet<>();
+		set.add(new Book(101,"Java","Balaguruswamy",5));
+		set.add(new Book(102, "C language", "Kanetkar", 3));
+		set.add(new Book(103, "OS", "Galvin", 4));
+		for(Book b:set)
+		{
+			System.out.println("Id: "+b.getId());
+			System.out.println("Book Name: "+b.getName());
+			System.out.println("Author Name: "+b.getAuthor());
+			System.out.println("Quantity: "+b.getQuantity());
+			System.out.println("===========================");
+		}
+		
+		
+
+	}
+
+}
