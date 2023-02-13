@@ -1,0 +1,71 @@
+package collection;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+
+public class ArrayListDemo {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> list=new ArrayList<>();
+		list.add(45);
+		list.add(33);
+		list.add(89);
+		list.add(22);
+		list.add(87);
+		list.add(21);
+		System.out.println(list.size());
+		System.out.println(list);
+		for(int i=0;i<list.size();i++)
+		{
+			System.out.print(list.get(i)+" ");
+		}
+				
+		System.out.println("\nUsing for each loop");
+		for(Integer in:list)
+		{
+			System.out.print(in+" ");
+		}
+		System.out.println("\nusing while loop");
+		int c=0;
+		while(c<list.size())
+		{
+			System.out.print(list.get(c)+" ");
+			c++;
+		}
+		//Traversing list through Iterator
+		System.out.println("\nusing iterator");
+		Iterator itr=list.iterator();
+		while(itr.hasNext())
+		{
+			System.out.print(itr.next()+" ");
+		}
+		//sorting arraylist in ascending order
+		Collections.sort(list);
+		System.out.println("after sorting: ");
+		System.out.println(list);
+		//sorting arraylist in descending order
+		Collections.sort(list,Collections.reverseOrder());
+		System.out.println("\nAfter sorting: ");
+		System.out.println(list);
+		list.add(2, 100);
+		System.out.println(list);
+		list.remove(4);
+		System.out.println(list);
+		ArrayList<Integer> list2=new ArrayList<>();
+		list2.addAll(list);
+		System.out.println("After copied: "+list2);
+		
+		ArrayList<String> names=new ArrayList<String>();
+		names.add("Suvojit");
+		names.add("Arpan");
+		names.add("Arpita");
+		names.add("Pritam");
+		String listname[]=names.toArray(new String[names.size()]);
+		for(String str:listname)
+		{
+			System.out.println(str);
+		}
+	}
+
+}
