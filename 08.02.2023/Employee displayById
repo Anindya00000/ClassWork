@@ -1,0 +1,12 @@
+public Employee displayById(long id)throws GlobalExeption
+{
+	int i;
+	for(i=0;i<emp.size();i++)
+	{
+		if(emp.get(i).getEmpId()==id)
+			return emp.get(i);
+	}
+	if(i==emp.size())
+		throw new GlobalExeption("Employee not found");
+	return null;
+	}
