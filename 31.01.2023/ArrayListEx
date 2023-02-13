@@ -1,0 +1,27 @@
+package collection;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListEx {
+
+	public static void main(String[] args) {
+		//ArrayList<Integer> al=new ArrayList<Integer>();
+		List<Integer> al=new ArrayList<Integer>();
+		al.add(34);
+		al.add(56);
+		al.add(45);
+		al.add(34);
+		System.out.println(al);
+		System.out.println(al.size());
+		al.remove(3);
+		System.out.println(al);
+		System.out.println(al.size());
+		for(int i=0;i<al.size();i++)
+		{
+			System.out.print(" "+al.get(i));
+		}
+
+	}
+
+}
