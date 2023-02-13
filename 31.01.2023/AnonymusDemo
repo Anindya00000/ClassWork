@@ -1,0 +1,55 @@
+package java8;
+interface Anonymus
+{
+	//void show();
+	//void mul();
+	//public String say();
+	int add(int a,int b);
+	//public String say(String name);
+	
+	}
+public class AnonymusDemo{
+
+	public static void main(String[] args) {
+//		Anonymus obj=new Anonymus() {
+//			
+//			@Override
+//			public void show() {
+//				System.out.println("hello Anonymus");
+//				
+//			}
+//
+//			@Override
+//			public void mul() {
+//				System.out.println(5*6);
+//				
+//			}
+//		};
+//		obj.show();
+//		obj.mul();
+//		Anonymus lamda=()->{
+//			System.out.println("hi lambda");
+//		};
+//		lamda.show();
+//		Anonymus s=()->{
+//			return "I have nothing to say";
+//		};
+//		System.out.println(s.say());
+//		Anonymus s1=name->{
+//			return "hello"+name;
+//		};
+//		System.out.println(s1.say("Suvojit"));
+		
+//		Anonymus ad1=(int a,int b)->{
+//			return a+b;
+//		//System.out.print(ad1.add(10, 20));
+//		};
+//		System.out.println(ad1.add(10, 20));
+		
+		Anonymus ad1=(a,b)->(a+b);
+		System.out.println(ad1.add(10, 20));
+	}
+
+
+}
+
