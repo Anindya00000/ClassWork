@@ -1,0 +1,71 @@
+package basic;
+
+import java.util.Scanner;
+
+public class Calculator {
+	public static int add(int a,int b)
+	{
+		return a+b;
+	}
+	public static int sub(int a,int b)
+	{
+		return a-b;
+	}
+	public static int mul(int a,int b)
+	{
+		return a*b;
+	}
+	public static int div(int a,int b)
+	{
+		return a/b;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int x,y;
+		do {
+		System.out.println("Addition(+)\nSubtraction(-)\nmultiplication(*)\ndiv(/)\nExit(X)");
+		char sign=sc.next().charAt(0);
+		switch(sign)
+		{
+		case '+':
+			System.out.println("Enter the 1st number: ");
+			x=sc.nextInt();
+			System.out.println("Enter the 2nd number: ");
+			y=sc.nextInt();
+			//int sum=add(x,y);
+			System.out.println(add(x,y));
+			break;
+		case '-':
+			System.out.println("Enter the 1st number: ");
+			x=sc.nextInt();
+			System.out.println("Enter the 2nd number: ");
+			y=sc.nextInt();
+			//int sum=add(x,y);
+			System.out.println(sub(x,y));
+			break;
+		case '*':
+			System.out.println("Enter the 1st number: ");
+			x=sc.nextInt();
+			System.out.println("Enter the 2nd number: ");
+			y=sc.nextInt();
+			//int sum=add(x,y);
+			System.out.println(mul(x,y));
+			break;
+		case '/':
+			System.out.println("Enter the 1st number: ");
+			x=sc.nextInt();
+			System.out.println("Enter the 2nd number: ");
+			y=sc.nextInt();
+			//int sum=add(x,y);
+			System.out.println(div(x,y));
+			break;
+		case 'X':
+			System.exit(0);
+		default:
+			System.out.println("Choose the correct sign");
+		}
+		}while(true);
+		
+	}
+
+}
