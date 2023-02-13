@@ -1,0 +1,20 @@
+package filehandling;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FileOutputStreamExample {
+
+	public static void main(String[] args) throws IOException {
+		FileOutputStream fout=new FileOutputStream("D:\\name.txt");
+//		fout.write(65);
+		String str1="File handling concept";
+		byte b[]=str1.getBytes();
+		fout.write(b);
+		fout.close();
+		System.out.println("write successful...");
+
+	}
+
+}
