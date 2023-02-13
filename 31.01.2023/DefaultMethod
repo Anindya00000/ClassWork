@@ -1,0 +1,32 @@
+package java8;
+interface Drawable
+{
+	void draw();
+	default void message()
+	{
+		System.out.println("since java 8 we can specify method body using default keyword");
+	}
+	static int multiply(int a,int b)
+	{
+		return a*b;
+	}
+	}
+class Circle implements Drawable
+{
+
+	@Override
+	public void draw() {
+		System.out.println("draw a circle");
+		
+	}
+	}
+public class DefaultMethod {
+
+	public static void main(String[] args) {
+		Circle c=new Circle();
+		c.draw();
+		c.message();
+		System.out.println(Drawable.multiply(5, 8));
+	}
+
+}
