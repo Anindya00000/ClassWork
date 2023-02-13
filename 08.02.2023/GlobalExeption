@@ -1,0 +1,9 @@
+package com.ems.exception;
+
+public class GlobalExeption extends Exception{
+	public GlobalExeption(String message)
+	{
+		super(message);
+	}
+
+}
