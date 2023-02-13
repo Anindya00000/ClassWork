@@ -1,0 +1,33 @@
+package oops;
+class ParentBank
+{
+	public void loan()
+	{
+		System.out.println("9% interest");
+	}
+	}
+class ChildSbi extends ParentBank
+{
+	public void loan()
+	{
+		System.out.println("7.75% interest");
+	}
+	}
+class  ChildAxis extends ParentBank
+{
+	public void loan()
+	{
+		System.out.println("12% interest");
+	}
+	}
+public class MethodOverriding {
+
+	public static void main(String[] args) {
+		ParentBank pb=new ChildSbi();//upcasting
+		pb.loan();
+		pb=new ChildAxis();
+		pb.loan();
+
+	}
+
+}
