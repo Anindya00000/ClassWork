@@ -1,0 +1,45 @@
+package collection;
+class Person extends Object
+{
+	int id;
+	String name;
+	int salary;
+	public Person(int id, String name, int salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	}
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public int getSalary() {
+		return salary;
+	}
+	@Override
+	 public boolean equals(Object obj)
+	 {
+		 //if both object has same reference
+		 if(this==obj)
+			 return true;
+		 //if parameter is null or both are not in same class
+		 if(obj==null ||this.getClass()!=obj.getClass())
+			 return false;
+		 //compare using data member
+		 Person p=(Person)obj;
+		 return this.id==p.id && this.name==p.name && this.salary==p.salary;
+	 }
+	}
+public class EqualsAndHashCode {
+
+	public static void main(String[] args) {
+		Person p1=new Person(101,"Pronotto",30000);
+		Person p2=new Person(101,"Pronotto",30000);
+		System.out.println(p1.equals(p2));
+
+	}
+
+}
