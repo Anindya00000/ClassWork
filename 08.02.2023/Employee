@@ -1,0 +1,28 @@
+package com.ems.entity;
+
+public class Employee {
+private long empId;
+private String empName;
+private double empSal;
+Address address;// has a relationship
+public Employee(long empId, String empName, double empSal, Address address) {
+	super();
+	this.empId = empId;
+	this.empName = empName;
+	this.empSal = empSal;
+	this.address = address;
+}
+public long getEmpId() {
+	return empId;
+}
+public String getEmpName() {
+	return empName;
+}
+public double getEmpSal() {
+	return empSal;
+}
+public Address getAddress() {
+	return address;
+}
+
+}
