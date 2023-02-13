@@ -1,0 +1,43 @@
+package collection;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapEx {
+
+	public static void main(String[] args) {
+		HashMap<Integer, String> map=new HashMap<>();
+		map.put(1, "Mango");
+		map.put(2, "Apple");
+		map.put(3, "Banana");
+		map.put(4, "Grapes");
+		//map.put(1, "kiwi");
+		
+		//System.out.println(map);
+		for(Map.Entry m:map.entrySet())
+		{
+			System.out.println(m.getKey()+" "+m.getValue());
+		}
+		System.out.println("=====================");
+		map.putIfAbsent(5, "kiwi");
+		for(Map.Entry m:map.entrySet())
+		{
+			System.out.println(m.getKey()+" "+m.getValue());
+		}
+		HashMap<Integer, String> map1=new HashMap<>();
+		map1.putAll(map);
+		System.out.println("=====================");
+		for(Map.Entry m:map1.entrySet())
+		{
+			System.out.println(m.getKey()+" "+m.getValue());
+		}
+		
+		map.replace(5, "kiwi","Water Melon");
+		System.out.println("=====================");
+		for(Map.Entry m:map.entrySet())
+		{
+			System.out.println(m.getKey()+" "+m.getValue());
+		}
+	}
+
+}
