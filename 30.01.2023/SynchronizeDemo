@@ -1,0 +1,64 @@
+package multithreading;
+
+import java.util.Scanner;
+
+class Account {
+	private int balance;
+	public Account(int balance)
+	{
+		this.balance=balance;
+	}
+	public boolean isSufficient(int w)
+	{
+		if(balance>w)
+			return(true);
+		else
+			return(false);
+	}
+	public void withdraw(int amt)
+	{
+		balance=balance-amt;
+		System.out.println("Withdrawl amount is: "+amt);
+		System.out.println("Current amount is: "+balance);
+	}
+ }
+class Customer implements Runnable
+{
+	private Account account;
+	private String name;
+	public Customer(Account account,String name)
+	{
+		this.account=account;
+		this.name=name;
+	}
+	public void run()
+	{
+		synchronized(account)
+		{
+		Scanner sc=new Scanner(System.in);
+		System.out.println(name+"enter amount: ");
+		int amt=sc.nextInt();
+		if(account.isSufficient(amt))
+		{
+			account.withdraw(amt);
+		}
+		else
+			System.out.println("insufficient balance");
+	}
+	}
+}
+
+public class SynchronizeDemo {
+
+	public static void main(String[] args) {
+		Account ac=new Account(1000);
+		Customer c1=new Customer(ac,"Rajat");
+		Customer c2=new Customer(ac, "Arpan");
+		Thread t1=new Thread(c1);
+		Thread t2=new Thread(c2);
+		t1.start();
+		t2.start();
+
+	}
+
+}
