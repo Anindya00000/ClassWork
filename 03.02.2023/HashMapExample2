@@ -1,0 +1,49 @@
+package collection;
+
+import java.util.HashMap;
+import java.util.Map;
+
+class Student1
+{
+	int roll;
+	String name,course;
+	public Student1(int roll, String name, String course) {
+		super();
+		this.roll = roll;
+		this.name = name;
+		this.course = course;
+	}
+	public int getRoll() {
+		return roll;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getCourse() {
+		return course;
+	}
+	
+	}
+
+public class HashMapExample {
+
+	public static void main(String[] args) {
+		Map<Integer,Student1> map=new HashMap<Integer,Student1>();
+		map.put(1, new Student1(101, "Bipul", "Btech"));
+		map.put(2, new Student1(102, "Arpan", "Btech"));
+		map.put(3,new Student1(103, "Ankita", "MSc"));
+		
+		for(Map.Entry<Integer, Student1> entry: map.entrySet())
+		{
+			int key=entry.getKey();
+			Student1 std=entry.getValue();
+			System.out.println("Details: "+key);
+			System.out.println("Roll: "+std.getRoll());
+			System.out.println("Name: "+std.getName());
+			System.out.println("Course: "+std.getCourse());
+			System.out.println("============================");
+		}
+
+	}
+
+}
