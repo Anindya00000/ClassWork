@@ -1,0 +1,45 @@
+package com.hibernatepro_vc;
+
+import org.hibernate.Transaction;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import org.hibernate.Session;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	SessionFactory factory=new Configuration().
+    			configure("hibernate.cfg.xml").
+    			buildSessionFactory();
+    	Session session=factory.openSession();
+    	Transaction tx=session.beginTransaction();
+//    	Book book2=new Book("c",500.00,700);
+//    	session.save(book2);
+    	
+    	Book book1=session.load(Book.class, 1);
+    	System.out.println(book1.getBookId());
+    	System.out.println(book1.getBookName());
+    	System.out.println(book1.getPrice());
+    	System.out.println(book1.getBookPages());
+    	System.out.println("======================");
+    	Book book2=session.load(Book.class, 2);
+    	System.out.println(book2.getBookId());
+    	System.out.println(book2.getBookName());
+    	System.out.println(book2.getPrice());
+    	System.out.println(book2.getBookPages());
+    	tx.commit();
+    	session.close();
+    	factory.close();
+
+    	
+    	
+        //System.out.println( "Hello World!" );
+    }
+}
