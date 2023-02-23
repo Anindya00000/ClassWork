@@ -1,0 +1,56 @@
+package com.hibernatepro_vc;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class HQLExample {
+
+	public static void main(String[] args) {
+		SessionFactory factory=new Configuration().
+    			configure("hibernate.cfg.xml").
+    			buildSessionFactory();
+    	Session session=factory.openSession();
+    	Transaction tx=session.beginTransaction();
+    	Scanner sc=new Scanner(System.in);
+    	
+    	//String query="from Student";
+//    	String query="from Student where city='Kolkata'";
+//    	String query="from Student where city=:x";
+    	//String query="from Student as s where s.city=:x and s.sName=:n";
+    	String query="delete from Student where id=:i";
+    	
+//    	System.out.println("Enter the city: ");
+//    	String c=sc.next();
+//    	System.out.println("Enter the Name: ");
+//    	String na=sc.next();
+    	System.out.println("enter the id: ");
+    	int sid=sc.nextInt();
+    	Query q=session.createQuery(query);
+    	q.setParameter("i", sid);
+    	int r=q.executeUpdate();
+    	System.out.println(r+" record deleted successfully");
+//    	Query q=session.createQuery(query);
+//    	q.setParameter("x", c);
+//    	q.setParameter("n", na);
+    	//single-(unique)
+    	//q.uniqueResult();
+    	//multiple -list
+//    	List<Student> list=q.list();
+//    	for(Student student: list)
+//    	{
+//    		System.out.println(student.getsName()+" : "+student.getCertificate().getCourseName());
+//    	}
+    	
+    	tx.commit();
+    	session.close();
+    	factory.close();
+
+	}
+
+}
