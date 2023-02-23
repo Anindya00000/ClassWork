@@ -1,0 +1,45 @@
+package com.hibernatepro_vc;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class Projects {
+	@Id
+	private int pId;
+	private String projectName;
+	@ManyToMany
+	private List<Employees> emps;
+	public int getpId() {
+		return pId;
+	}
+	public void setpId(int pId) {
+		this.pId = pId;
+	}
+	public String getProjectName() {
+		return projectName;
+	}
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+	public List<Employees> getEmps() {
+		return emps;
+	}
+	public void setEmps(List<Employees> emps) {
+		this.emps = emps;
+	}
+	public Projects(int pId, String projectName, List<Employees> emps) {
+		super();
+		this.pId = pId;
+		this.projectName = projectName;
+		this.emps = emps;
+	}
+	public Projects() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}
