@@ -1,0 +1,40 @@
+package com.ars_vc;
+
+import com.ars_vc.entity.Admin;
+import com.ars_vc.entity.Passenger;
+import com.ars_vc.service.AdminService;
+import com.ars_vc.service.PassengerService;
+import com.ars_vc.serviceImpl.AdminServiceImpl;
+import com.ars_vc.serviceImpl.PassengerServiceImpl;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+       // System.out.println( "Hello World!" );
+//    	AdminService aService=new AdminServiceImpl();
+//    	Admin admin=new Admin();
+//    	admin.setAName("Rajat");
+//    	admin.setEmail("raj111@gmail.com");
+//    	admin.setUserName("rajat123");
+//    	admin.setPassword("r123");
+//    	admin.setRole("admin");
+//    	aService.registerAdmin(admin);
+//    	System.out.println("admin registration successful");
+    	
+    	PassengerService pService=new PassengerServiceImpl();
+    	Passenger passenger1=new Passenger();
+    	passenger1.setName("Soumen");
+    	passenger1.setEmail("soumen123@gmail.com");
+    	passenger1.setPhno("9808876543");
+    	passenger1.setUserName("sou123");
+    	passenger1.setPassword("s12345");
+    	passenger1.setRole("user");
+    	pService.savePassenger(passenger1);
+    	System.out.println("passenger save successfully");
+    }
+}
